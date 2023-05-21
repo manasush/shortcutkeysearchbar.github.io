@@ -1,0 +1,177 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap");
+
+/* Reset styles and global styles */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Background styles */
+
+body {
+  background: linear-gradient(
+    90deg,
+    rgb(101, 94, 236) 0%,
+    rgb(162, 90, 168) 53%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+}
+
+/* Text selection styles */
+
+::selection {
+  color: #fff;
+  background: #664aff;
+}
+
+/* Wrapper styles */
+
+.wrapper {
+  max-width: 450px;
+  margin: 150px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Search input styles */
+
+.wrapper .search-input {
+  background: transparent;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 1px 5px 3px rgba(255, 255, 255, 0.12);
+}
+
+.search-input input {
+  height: 55px;
+  width: 100%;
+  outline: none;
+  border: 2px solid white;
+  animation: glow 2s infinite alternate;
+  border-radius: 5px;
+  padding: 0 60px 0 20px;
+  font-size: 18px;
+  background: transparent;
+  color: #fff;
+}
+
+.search-input.active input {
+  backdrop-filter: blur(10px);
+}
+
+/* Autocomplete box styles */
+
+.search-input .autocom-box {
+  padding: 0;
+  opacity: 0;
+  pointer-events: none;
+  max-height: 280px;
+  overflow-y: auto;
+  color: #fff;
+}
+
+.search-input.active .autocom-box {
+  padding: 10px 8px;
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.autocom-box li {
+  list-style: none;
+  padding: 8px 12px;
+  display: none;
+  width: 100%;
+  cursor: default;
+  border-radius: 3px;
+}
+
+.search-input.active .autocom-box li {
+  display: block;
+}
+
+.autocom-box li:hover {
+  background: #664aff;
+  color: #fff;
+}
+
+/* Search icon styles */
+
+.search-input .icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 55px;
+  width: 55px;
+  text-align: center;
+  line-height: 55px;
+  font-size: 20px;
+  color: #000;
+  cursor: pointer;
+}
+
+/* Scrollbar styles */
+
+.search-input .autocom-box::-webkit-scrollbar {
+  width: 8px;
+}
+
+/* Animation keyframes */
+
+@keyframes glow {
+  0% {
+    box-shadow: 0px 0px 5px 5px rgba(255, 253, 253, 0.1);
+  }
+  50% {
+    box-shadow: 0px 0px 15px 10px rgba(255, 253, 253, 0.3);
+  }
+  100% {
+    box-shadow: 0px 0px 5px 5px rgba (255, 253, 253, 0.1);
+  }
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Placeholder styles */
+
+.search-input input::placeholder {
+  color: rgb(255, 255, 255);
+}
+
+/* Selected autocomplete item styles */
+
+.autocom-box li.selected {
+  background: #664aff;
+  color: #fff;
+}
+
+/* Output box styles */
+
+.output-box {
+  margin-top: 20px;
+  display: none;
+}
+
+.output-content {
+  background-color: rgba(255, 255, 255, 0.8);
+  padding: 10px;
+  border-radius: 5px;
+  font-size: 16px;
+  color: #000;
+}
