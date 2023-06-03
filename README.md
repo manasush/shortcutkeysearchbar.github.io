@@ -1,1 +1,1 @@
-# shortcutkeysearchbar.github.io
+ https://manasush.github.io/shortcutkeysearchbar.github.io/
